@@ -1,0 +1,12 @@
+{
+  "name": "handeling",
+  "version": "1.0.0",
+  "description": "this is a project used to practice all learned in express till now.",
+  "license": "ISC",
+  "author": "Divyansh Kachangal",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
