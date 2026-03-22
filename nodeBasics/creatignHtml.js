@@ -8,6 +8,10 @@ const server = http.createServer((req, res)=> {
     res.end();
 });
 
+const server2 = http.createServer((req, res) => {
+    console.log("hello wolrd");
+})
+
 server.listen(PORT, ()=> {
     console.log(`Server is live at : http://localhost:${PORT}`);
 });
