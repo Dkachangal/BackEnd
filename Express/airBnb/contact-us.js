@@ -1,10 +1,9 @@
 const express = require('express');
 const contactPageRouter = express.Router();
+const path = require('path');
 
 contactPageRouter.get("/contact-us", (req, res, next) => {
-    res.send(`<h1>This is the contact us page</h1>
-                <h3> <a href = "/"> home</a></h3>
-        `);
+        res.sendFile(path.join(__dirname, 'views', 'contactUs.html'));
 });
 
 module.exports = contactPageRouter;

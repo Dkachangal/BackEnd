@@ -1,18 +1,18 @@
 const express = require('express');
 const addHome = express.Router();
+const parseBody = require('body-parser');
+const path = require('path');
+const bodyParser = require('body-parser');
 
 addHome.get("/add-home", (req, res, next) => {
-    res.send(`<h1>Enter Your Details</h1>
-        <form method="post" action="/add-home">
-        <input type="text" name="home" placeholder="Enter home name">
-        <input type="submit" name="submit">
-    </form>`);
+
+    res.sendFile(path.join(__dirname, 'views', 'FormPageGET.html'));
 });
 
 addHome.post("/add-home", (req, res, next) => {
-    res.send(`<h1> Home has been added Successfully</h1>
-        <h3> <a href = "/"> Home</a></h3>
-        `);
+    res.sendFile(path.join(__dirname, 'views', 'FormPagePOST.html'));
+    bodyParser.urlencoded();
+    console.log(req.body);
 });
 
 module.exports = addHome;
