@@ -1,42 +1,40 @@
+// External Module
 const express = require('express');
+
+// Local Module
+const purchasePage = require('./purchasePage.js');
+const homePageRouter = require('./home.js');
+const contact_page = require('./contact-us.js');
+const addHome = require('./addHomeRouter.js');
+
+const bodyParser = require('body-parser');
 const port = 3002;
 const app = express();
 
-// show home to user
-app.get("/", (req, res, next) => {
-    res.send(`<h1> hello world</h1>
-            <h3><a href = "/contact-us">Contact Us</a></h3>
-            <h3><a href = "/add-home"> Add Home</a></h3>
-        `);
+
+
+app.use((req, res, next) => {
+    console.log(req.url);
     next();
 });
+app.use(bodyParser.urlencoded());
 
+
+
+// show home to user
+app.use(homePageRouter);
+        
 // show contact us page to user
-app.get("/contact-us", (req, res, next) => {
-    res.send(`<h1>This is the contact us page</h1>
-        <h3> <a href = "/"> home</a></h3>
-        `);
-});
-
-// show form to user
-app.get("/add-home", (req, res, next) => {
-    res.send(`<h1>Register Your home here</h1>
-            <form method="post" action="/add-home">
-        <input type="text" name="home" placeholder="Enter home name">
-        <input type="submit" name="submit">
-    </form>
-        `);
-});
-
-// show form result to user
-app.post("/add-home", (req, res, next) => {
-    res.send(`<h1> Home has been added Successfully</h1>
-            <h3> <a href = "/"> Home</a></h3>
-        `);
-});
-
-
-// app listener
-app.listen(port, ()=> {
-    console.log(`http://localhost:${port}`);
-});
+app.use(contact_page);
+    
+// add home GET AND POST BOTH
+app.use(addHome);
+    
+// purchase Page Router
+app.use("/host", purchasePage);
+    
+    
+    // app listener
+    app.listen(port, ()=> {
+        console.log(`http://localhost:${port}`);
+    });
