@@ -15,9 +15,13 @@ const Router404 = require('./404JS.js');
 const port = 3002;
 const app = express();
 
+// Body Parser
 app.use(bodyParser.urlencoded());
-app.use(express.static(path.join(__dirname, 'public')));
 
+
+// adding CSS
+app.use(express.static(path.join(__dirname, 'public', 'output')));
+ 
 // show home to user
 app.use(homePageRouter);
 
@@ -33,6 +37,7 @@ app.use(purchasePage);
 // 404 - if any of above deosnt match
 app.use(Router404);
 // app listener
+
 app.listen(port, ()=> {
     console.log(`http://localhost:${port}`);
 });
