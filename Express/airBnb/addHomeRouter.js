@@ -3,16 +3,29 @@ const addHome = express.Router();
 const parseBody = require('body-parser');
 const path = require('path');
 const bodyParser = require('body-parser');
+const { builtinModules } = require('module');
 
 addHome.get("/add-home", (req, res, next) => {
 
     res.sendFile(path.join(__dirname, 'views', 'FormPageGET.html'));
 });
 
-addHome.post("/add-home", (req, res, next) => {
-    res.sendFile(path.join(__dirname, 'views', 'FormPagePOST.html'));
+const nameArray = [];
+
+addHome.use((req, res, next) => {
     bodyParser.urlencoded();
-    console.log(req.body);
+    next();
+});
+addHome.post("/add-home", (req, res, next) => {
+    // res.sendFile(path.join(__dirname, 'views', 'FormPagePOST.html'));
+    res.render('FormPagePOST');
+    
+
+    // console.log("Home registered for : ", req.body.home);
+    nameArray.push(req.body.home);
+    console.log(nameArray);
 });
 
-module.exports = addHome;
+
+exports.addHome = addHome;
+exports.nameArray = nameArray;

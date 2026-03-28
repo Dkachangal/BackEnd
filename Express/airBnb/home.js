@@ -1,15 +1,11 @@
 const express = require('express');
 const homePage = express.Router();
 const path = require('path');
+const {addHome, nameArray} = require('./addHomeRouter.js');
 
 homePage.get("/", (req, res, next) => {
-    //  res.send(`<h1> hello world</h1>
-    //     <h3><a href = "/contact-us">Contact Us</a></h3>
-    //     <h3><a href = "/add-home"> Add Home</a></h3>
-    //         <h3><a href = "/host/purchasePage"> Purchase Page Router</a></h3>
-    //         `);
-
-    res.sendFile(path.join(__dirname, 'views', 'homePage.html'));
+    // res.sendFile(path.join(__dirname, 'views', 'homePage.html'));
+    res.render('homePage', {nameArray});
 });
 
 module.exports = homePage;

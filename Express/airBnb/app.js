@@ -7,17 +7,16 @@ const bodyParser = require('body-parser');
 const purchasePage = require('./purchasePage.js');
 const homePageRouter = require('./home.js');
 const contact_page = require('./contact-us.js');
-const addHome = require('./addHomeRouter.js');
+const {addHome} = require('./addHomeRouter.js');
 const Router404 = require('./404JS.js');
-
 
 
 const port = 3002;
 const app = express();
+app.set('view engine', 'ejs');
 
 // Body Parser
 app.use(bodyParser.urlencoded());
-
 
 // adding CSS
 app.use(express.static(path.join(__dirname, 'public', 'output')));
@@ -36,8 +35,8 @@ app.use(purchasePage);
 
 // 404 - if any of above deosnt match
 app.use(Router404);
-// app listener
 
+// app listener
 app.listen(port, ()=> {
     console.log(`http://localhost:${port}`);
 });

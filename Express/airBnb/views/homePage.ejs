@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="/output.css">
+
+</head>
+<body>
+    <!-- THIS IS USED TO ADD PARTIAL OF NAVIGATION BAR -->
+    <%- include('partials/navBar') %>
+    <h1 class="text-red-900 text-5xl"> Hello world from HTML</h1>
+    <div class="flex gap-10 mt-10">
+        <h3><a href = "/contact-us" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Contact Us</a></h3>
+        <h3><a href = "/add-home" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition"> Add Home</a></h3>
+        <h3><a href = "/purchasePage" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition"> Purchase Page Router</a></h3>
+    </div>
+    <div>
+        <ul>
+            <% nameArray.forEach(name => { %>
+                <li class="bg-yellow-900 text-white px-4 py-2 hover:bg-yellow-600 "> <%= name %> </li>
+            <% }); %>
+
+        </ul>
+    </div>
+</body>
+</html>
