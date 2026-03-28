@@ -13,6 +13,8 @@ const Router404 = require('./404JS.js');
 
 const port = 3002;
 const app = express();
+
+//EJS
 app.set('view engine', 'ejs');
 
 // Body Parser
