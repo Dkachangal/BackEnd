@@ -1,0 +1,4 @@
+MONGO DB USER:
+    id : dk
+    pass: divyansh
+    uri: mongodb+srv://dk:<db_password>@learningmongodb.0sqhc9h.mongodb.net/
