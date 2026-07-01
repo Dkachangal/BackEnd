@@ -1,0 +1,153 @@
+/* Premium Light Glassmorphism Config */
+:root {
+    --bg-main: #f8fafc;
+    --glass-surface: rgba(255, 255, 255, 0.35);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-inner-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.7);
+    
+    --text-heading: #0f172a;
+    --text-body: #334155;
+    --text-placeholder: #94a3b8;
+    
+    --electric-blue: #0066ff;
+    --input-focus-glow: rgba(0, 102, 255, 0.12);
+}
+
+/* Main Container: Mobile viewport responsive layer */
+.create-post-section {
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient Backdrops (Crucial for refracting light glass) */
+.bg-ambient-glow-1 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.08) 0%, rgba(255,255,255,0) 70%);
+    top: 15%;
+    left: -10%;
+    pointer-events: none;
+}
+
+.bg-ambient-glow-2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.06) 0%, rgba(255,255,255,0) 70%);
+    bottom: 15%;
+    right: -10%;
+    pointer-events: none;
+}
+
+.create-post-section h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+    z-index: 1;
+}
+
+/* Hyper-Advanced Frosted Glass Form Card */
+form {
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(35px) saturate(180%);
+    -webkit-backdrop-filter: blur(35px) saturate(180%);
+    box-shadow: 
+        var(--glass-inner-shadow),
+        0 4px 30px rgba(0, 0, 0, 0.02),
+        0 20px 40px rgba(15, 23, 42, 0.06);
+    border-radius: 24px;
+    padding: 2.25rem 1.75rem;
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    z-index: 1;
+}
+
+/* Advanced Translucent File Input styling */
+input[type="file"] {
+    color: var(--text-body);
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.01);
+    padding: 0.75rem;
+    border-radius: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Embedded Native File Button Overhaul */
+input[type="file"]::file-selector-button {
+    background: rgba(0, 102, 255, 0.07);
+    border: 1px solid rgba(0, 102, 255, 0.15);
+    color: var(--electric-blue);
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-right: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:active {
+    background: var(--electric-blue);
+    color: #ffffff;
+}
+
+/* Clean Translucent Text Input */
+input[type="text"] {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 14px;
+    padding: 1rem;
+    color: var(--text-heading);
+    font-size: 0.95rem;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type="text"]::placeholder {
+    color: var(--text-placeholder);
+}
+
+input[type="text"]:focus {
+    border-color: var(--electric-blue);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 16px var(--input-focus-glow);
+}
+
+/* Premium Linear Gradient Accent Submit Button */
+button {
+    background: linear-gradient(135deg, var(--electric-blue) 0%, #0052cc 100%);
+    border: none;
+    border-radius: 14px;
+    padding: 1rem;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+}
+
+button:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 6px rgba(0, 102, 255, 0.3);
+}

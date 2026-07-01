@@ -1,0 +1,225 @@
+/* Hyper-Premium Light Glassmorphic System */
+:root {
+    --bg-main: #f4f6fa;
+    --glass-core: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.7);
+    --glass-edge-highlight: inset 0 1.5px 1px rgba(255, 255, 255, 0.85);
+    
+    /* Luxury Typography Hierarchy */
+    --color-title: #0a0f1d;
+    --color-body: #2c3545;
+    --color-muted: #627185;
+    
+    /* Vibrant Accent Mesh Nodes */
+    --accent-blue: #0066ff;
+    --avatar-pink: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
+    --avatar-blue: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+}
+
+/* Base Wrapper Optimization for Mobile Frame Viewports */
+.feed-section {
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.25rem;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Roboto, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Strategic Ambient Light Projectors (Generates deep refraction backdrops) */
+.bg-ambient-glow-1 {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.09) 0%, rgba(255,255,255,0) 70%);
+    top: -10%;
+    right: -30%;
+    pointer-events: none;
+    filter: blur(20px);
+}
+
+.bg-ambient-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.07) 0%, rgba(255,255,255,0) 70%);
+    bottom: 20%;
+    left: -25%;
+    pointer-events: none;
+    filter: blur(20px);
+}
+
+/* High-End Minimalist Header Layout */
+.feed-header {
+    width: 100%;
+    max-width: 390px;
+    margin-bottom: 2rem;
+    padding-left: 0.25rem;
+    z-index: 5;
+}
+
+.feed-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-title);
+    letter-spacing: -0.05em;
+    margin: 0;
+    background: linear-gradient(180deg, var(--color-title) 30%, #4a5568 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feed-header p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    letter-spacing: -0.01em;
+    margin: 0.35rem 0 0 0;
+    text-transform: uppercase;
+    opacity: 0.8;
+
+}
+
+/* Vertical Core Feed Assembly */
+.feed-container {
+    width: 100%;
+    max-width: 390px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    z-index: 2;
+}
+
+/* Master Glassmorphic Card Architecture */
+.feed-card {
+    background: var(--glass-core);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(40px) saturate(210%);
+    -webkit-backdrop-filter: blur(40px) saturate(210%);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 
+        var(--glass-edge-highlight),
+        0 4px 24px -4px rgba(15, 23, 42, 0.02),
+        0 24px 48px -12px rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Micro-interaction on card press */
+.feed-card:active {
+    transform: scale(0.985);
+    box-shadow: 
+        var(--glass-edge-highlight),
+        0 2px 12px -4px rgba(15, 23, 42, 0.02),
+        0 12px 24px -12px rgba(15, 23, 42, 0.06);
+}
+
+/* Header Section inside Card */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.15rem 1.35rem;
+}
+
+/* Smooth Iridescent Avatar Spheres */
+.avatar-placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.pink-glow {
+    background: var(--avatar-pink);
+}
+
+.blue-glow {
+    background: var(--avatar-blue);
+}
+
+.username {
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: var(--color-title);
+    letter-spacing: -0.03em;
+}
+
+/* Clean Frame for Editorial Images */
+.post-image-container {
+    width: 100%;
+    aspect-ratio: 4 / 4;
+    background: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Direct Target Configuration for Rendered Imagekit Links */
+.image-viewport {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Luxury Card Footer & Typography Spec */
+.card-footer {
+    padding: 1.25rem 1.5rem 1.65rem 1.5rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+.post-caption {
+    font-size: 0.925rem;
+    line-height: 1.55;
+    color: var(--color-body);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.username-inline {
+    font-weight: 750;
+    color: var(--color-title);
+    margin-right: 0.6rem;
+    letter-spacing: -0.02em;
+}
+
+/* Elegant Empty Database Indicator */
+.no-posts-text {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    font-weight: 500;
+    margin-top: 4rem;
+    letter-spacing: -0.01em;
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-core);
+}
+
+button {
+    background: linear-gradient(135deg, var(--electric-blue) 0%, #0052cc 100%);
+    border: none;
+    border-radius: 14px;
+    padding: 1rem;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+}
+button:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 6px rgba(0, 102, 255, 0.3);
+}
